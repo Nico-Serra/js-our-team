@@ -33,10 +33,27 @@ const team = [
     },
 ];
 
+
+
 //- Cicliamo all'interno dell'array Team e ci logghiamo le info di ogni singolo member 
 
 for (let i = 0; i < team.length; i++) {
     const member = team[i];
+
+    let rowEl = document.querySelector('.row')
+
+    let col4 = document.createElement('div')
+
+    col4.classList.add('col-4')
+
+    rowEl.append(col4)
+
+    let card = document.createElement('div')
+
+    card.classList.add('card', 'my-3')
+
+    col4.append(card)
+
 
     //console.log(member.name, member.role, member.image);
 
@@ -44,22 +61,26 @@ for (let i = 0; i < team.length; i++) {
         //console.log(member[key]);
         let info = member[key]
 
-        let markup = `<div>${info}</div>`
 
         //- Stampiamo all'interno della DOM queste info per ogni member
 
+        ///BONUS///
+        //- Ci creiamo una let markup dove all'interno prendiamo parte del codice HTML e con il tamplate litteral inseriamo la variabile che contiene la foto
+        //- Modifichiamo il markup per poter organizzare le card dei member
+
         if (info === member.image) {
-            markup = `<img src="./assets/img/${info}" alt="">`
-            document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
+            let markup = `<img src="./assets/img/${info}" alt="">`;
+            card.insertAdjacentHTML('beforeend', markup);
+        } else if (info === member.name) {
+            let markup = `<h2 class="text-center py-3">${info}</h2>`;
+            card.insertAdjacentHTML('beforeend', markup);
         } else {
-            document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
+            let markup = `<p class="text-center py-1">${info}</p>`;
+            card.insertAdjacentHTML('beforeend', markup);
         }
     }
-    
+
 }
 
 
 
-    ///BONUS///
-//- Ci creiamo una let markup dove all'interno prendiamo parte del codice HTML e con il tamplate litteral inseriamo la variabile che contiene la foto 
-//- Modifichiamo il markup per poter organizzare le card dei member
