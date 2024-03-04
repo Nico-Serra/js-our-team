@@ -39,8 +39,14 @@ for (let i = 0; i < team.length; i++) {
     const member = team[i];
 
     //console.log(member.name, member.role, member.image);
+
     for (const key in member) {
-        console.log(member[key]);
+        //console.log(member[key]);
+        let info = member[key]
+
+        let markup = `<div>${info}</div>`
+
+        document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
     }
     
 }
