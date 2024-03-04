@@ -46,13 +46,20 @@ for (let i = 0; i < team.length; i++) {
 
         let markup = `<div>${info}</div>`
 
-        document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
+        //- Stampiamo all'interno della DOM queste info per ogni member
+
+        if (info === member.image) {
+            markup = `<img src="./assets/img/${info}" alt="">`
+            document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
+        } else {
+            document.querySelector('.info').insertAdjacentHTML('beforeend', markup)
+        }
     }
     
 }
 
 
-//- Stampiamo all'interno della DOM queste info per ogni member
+
     ///BONUS///
 //- Ci creiamo una let markup dove all'interno prendiamo parte del codice HTML e con il tamplate litteral inseriamo la variabile che contiene la foto 
 //- Modifichiamo il markup per poter organizzare le card dei member

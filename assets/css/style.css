@@ -8,6 +8,6 @@ body{
     background-color: gainsboro;
 }
 
-.div{
-    padding: 3rem 0;
+img{
+    max-width: 100%;
 }
