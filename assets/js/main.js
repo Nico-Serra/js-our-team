@@ -1,4 +1,4 @@
-console.log('Hello world');
+//console.log('Hello world');
 
 const team = [
     {
@@ -34,6 +34,18 @@ const team = [
 ];
 
 //- Cicliamo all'interno dell'array Team e ci logghiamo le info di ogni singolo member 
+
+for (let i = 0; i < team.length; i++) {
+    const member = team[i];
+
+    //console.log(member.name, member.role, member.image);
+    for (const key in member) {
+        console.log(member[key]);
+    }
+    
+}
+
+
 //- Stampiamo all'interno della DOM queste info per ogni member
     ///BONUS///
 //- Ci creiamo una let markup dove all'interno prendiamo parte del codice HTML e con il tamplate litteral inseriamo la variabile che contiene la foto 
